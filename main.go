@@ -3,8 +3,18 @@ package main
 import "fmt"
 
 func main(){
-	pierw()
-	druga()
+	// pierw()
+	// druga()
+	stringi()
+}
+
+func stringi(){
+	MojStr := "PawcioSrapcio"
+	fmt.Printf("Moj string to typ: %T\n", MojStr)
+
+	MojStrLenght := len(MojStr)
+	fmt.Println("Lenght of Mojstr: ", MojStrLenght)
+
 }
 
 func druga() {
@@ -19,9 +29,6 @@ func druga() {
 	fmt.Printf("a jest typu %T\n",a)
 
 	fmt.Println(a)
-
-
-
 }
 
 func pierw() {
