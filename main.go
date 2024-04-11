@@ -12,9 +12,61 @@ func main() {
 	// pierw()
 	// druga()
 	// stringi()
-	Petle()
+	// Petle()
+	SwitcheIfy()
 }
 
+func SwitcheIfy() {
+	i := 7
+
+	switch i {
+		case 1:
+            fmt.Println("one")
+        case 2:
+            fmt.Println("two")
+        case 3:
+            fmt.Println("three")
+        default:
+            fmt.Println("default")
+	}
+
+	switch {
+		case i == 1:
+            fmt.Println("one")
+        case i == 2:
+            fmt.Println("two")
+        case i == 6:
+            fmt.Println("six")
+			fallthrough
+		case i == 7:
+            fmt.Println("seven")
+			// fallthrough
+		case i > 5 && i < 8:
+			fmt.Println("bigger than 5")
+        default:
+            fmt.Println("default")
+	}
+
+	var j interface{} = "asd"
+	switch j.(type) {
+		case nil:
+			fmt.Println("nil")
+		case bool:
+            fmt.Println("boolean")
+        case int:
+            fmt.Println("integer")
+        case string:
+            fmt.Println("string")
+        default:
+            fmt.Println("default")
+		}
+    
+	v := "21"
+	if r, err := strconv.Atoi(v); err == nil {
+		fmt.Printf("\nTyp: %T, wartosc: %d\n", r, r)
+	}
+		
+}
 
 func Petle(){
 	samochody := []string{"Kia", "Merc", "BMW", "Audi", "Volvo", "Jeep", "Toyota"}
@@ -47,9 +99,6 @@ func Petle(){
 		time.Sleep(time.Second * 1)
 		i++
 	}
-
-
-
 }
 
 func stringi() {
