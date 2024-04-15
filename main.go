@@ -48,7 +48,85 @@ func main() {
 	// 	fmt.Println(str)
 	// }(inp)
 
-	struktury()
+	//struktury()
+
+	// pointery()
+
+	slicyarrarje()
+}
+
+func slicyarrarje() {
+	var MyArray [5][10]int
+	var MySlice1 = make([]int, 10)
+	MySlice2 := make([]int, 5)
+	MySlice3 := []int{1,2,3}
+
+
+	fmt.Println("MySlice == nil", MySlice1 == nil)
+	fmt.Println(len(MySlice1))
+	fmt.Println(cap(MySlice1))
+	fmt.Println(MySlice1)
+	MySlice1 = append(MySlice1, 1)
+	fmt.Println(MySlice1)
+	fmt.Println(len(MySlice1))
+	fmt.Println(cap(MySlice1))
+	fmt.Println("---------------------")
+
+	fmt.Println(MySlice1)
+	fmt.Println(MySlice2)
+	fmt.Println(MySlice3)
+
+	fmt.Println("---------------------")
+
+	fmt.Println("Prin", len(MyArray))
+
+	rows := 3
+	cols := 4
+	myArray2 := make([][]int, rows)
+	for i := range myArray2 {
+		myArray2[i] = make([]int, cols)
+	}
+
+	for i := range myArray2 {
+		fmt.Println(i, myArray2[i])
+	}
+
+	fmt.Println(myArray2)
+
+}
+
+func pointery() {
+	a := 100
+	origPointer := &a
+	fmt.Println("Starting value a: ", a)
+	fmt.Println("origPointer: ", origPointer)
+	fmt.Println("a: ", a)
+	fmt.Println("origPointer val: ", *origPointer)
+
+	fmt.Println(" ---1-- ")
+
+	a++
+	fmt.Println("a: ", a)
+	fmt.Println("&a==origPointer", &a == origPointer)
+
+	fmt.Println(" ---2-- ")
+
+	a++
+	fmt.Println("a: ", a)
+	fmt.Println("&a==origPointer", &a == origPointer)
+
+	fmt.Println(" ---3-- ")
+
+	b := new(int)
+	*b++
+	c := *b
+	fmt.Println("b (pointer): ", b)
+	fmt.Println("b (value): ", *b)
+	fmt.Println("c (value): ", c)
+	fmt.Println("c (pointer): ", &c)
+
+	fmt.Println(" ---4-- ")
+	*b++
 
 }
 
