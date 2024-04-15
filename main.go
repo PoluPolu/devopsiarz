@@ -8,67 +8,114 @@ import (
 	"unicode/utf8"
 )
 
+type MyFuncDod = func(x, y int) int
+
 func main() {
 	// pierw()
 	// druga()
 	// stringi()
 	// Petle()
-	SwitcheIfy()
+	// SwitcheIfy()
+	// zewnetrzna() //wywolanie go run *.go lub go run .
+
+	// fmt.Println(dodawanko1(1,2))
+	// txt, err := tekscior("Paawel", "Robert")
+	// fmt.Println(txt, err)
+
+	// if txt, err := tekscior("Paawel", "Robert"); txt == "Pawel Robert" {
+	// 	fmt.Println(txt, err)
+	// } else {
+	// 	fmt.Println("Ni hujaaa a jest >5, err: ", err)
+	// }\
+
+	// var fd MyFuncDod = dodawanko1 //tu mozna dac od razy body
+	// var fd2 MyFuncDod = func (s,d int) int {
+	// 	return s + d
+	// }
+	// rdodawania := fd(1,2)
+	// fmt.Println(rdodawania)
+	// rdodawania2 := fd2(3,2)
+	// fmt.Println(rdodawania2)
+
+	// DevOpsFunc := func(num ...int) {
+	// 	fmt.Println("Liczba cyderek: ",len(num))
+	// }
+	// DevOpsFunc(1)
+	// DevOpsFunc(1,2,33,4,5,6)
+
+	// inp := "Tekscik doi funkcyji"
+	// func(str string){
+	// 	fmt.Println(str)
+	// }(inp)
+
+	struktury()
+
+}
+
+func tekscior(a, b string) (string, bool) {
+	if len(a) == 5 {
+		return a + "-" + b, true
+	} else {
+		return b + a, false
+	}
+}
+
+func dodawanko1(x, y int) int {
+	return x + y
 }
 
 func SwitcheIfy() {
 	i := 7
 
 	switch i {
-		case 1:
-            fmt.Println("one")
-        case 2:
-            fmt.Println("two")
-        case 3:
-            fmt.Println("three")
-        default:
-            fmt.Println("default")
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	default:
+		fmt.Println("default")
 	}
 
 	switch {
-		case i == 1:
-            fmt.Println("one")
-        case i == 2:
-            fmt.Println("two")
-        case i == 6:
-            fmt.Println("six")
-			fallthrough
-		case i == 7:
-            fmt.Println("seven")
-			// fallthrough
-		case i > 5 && i < 8:
-			fmt.Println("bigger than 5")
-        default:
-            fmt.Println("default")
+	case i == 1:
+		fmt.Println("one")
+	case i == 2:
+		fmt.Println("two")
+	case i == 6:
+		fmt.Println("six")
+		fallthrough
+	case i == 7:
+		fmt.Println("seven")
+		// fallthrough
+	case i > 5 && i < 8:
+		fmt.Println("bigger than 5")
+	default:
+		fmt.Println("default")
 	}
 
 	var j interface{} = "asd"
 	switch j.(type) {
-		case nil:
-			fmt.Println("nil")
-		case bool:
-            fmt.Println("boolean")
-        case int:
-            fmt.Println("integer")
-        case string:
-            fmt.Println("string")
-        default:
-            fmt.Println("default")
-		}
-    
+	case nil:
+		fmt.Println("nil")
+	case bool:
+		fmt.Println("boolean")
+	case int:
+		fmt.Println("integer")
+	case string:
+		fmt.Println("string")
+	default:
+		fmt.Println("default")
+	}
+
 	v := "21"
 	if r, err := strconv.Atoi(v); err == nil {
 		fmt.Printf("\nTyp: %T, wartosc: %d\n", r, r)
 	}
-		
 }
 
-func Petle(){
+func Petle() {
 	samochody := []string{"Kia", "Merc", "BMW", "Audi", "Volvo", "Jeep", "Toyota"}
 	for idx, samochody := range samochody {
 		fmt.Printf("%d => %s\n", idx, samochody)
@@ -87,7 +134,7 @@ func Petle(){
 		fmt.Println("Petla numer ", i)
 		if i == 3 {
 			fmt.Println("3 petla")
-			time.Sleep(time.Second * 1)			
+			time.Sleep(time.Second * 1)
 			i++
 			continue
 		}
@@ -190,13 +237,13 @@ func stringi() {
 	fmt.Println("---szukanie powtarzanie-----------------------------------------------------")
 	MyStr = "Pawel Polanowski i Beata\n"
 	if strings.Contains(MyStr, "Gawe") {
-		fmt.Println("Jest Pawel")		
+		fmt.Println("Jest Pawel")
 	} else {
 		fmt.Println("Nie ma Gawela")
 	}
 
 	RepeaterChar := "Pa"
-	fmt.Println(strings.Repeat(RepeaterChar,21))
+	fmt.Println(strings.Repeat(RepeaterChar, 21))
 }
 
 func druga() {
