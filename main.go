@@ -51,8 +51,9 @@ func main() {
 	//struktury()
 
 	// pointery()
+	pointeryJamie()
 
-	slicyarrarje()
+	// slicyarrarje()
 }
 
 func slicyarrarje() {
